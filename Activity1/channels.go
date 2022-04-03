@@ -12,7 +12,7 @@ func producer(channel chan int) {
 
 func main() {
 	ch := make(chan int)
-	go producer(ch)
+	go producer(ch) // trigger a concurrent routine to happen and calls “producer” to start
 	for {
 		v, ok := <-ch
 		if ok == false {
